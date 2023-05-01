@@ -116,12 +116,15 @@ let onClickModal = async (event) => {
   } else {
     alert("Add a values!");
   }
+
+  getCards();
 };
 
 let onDelete = async (id) => {
   let deletedCard = await request(`${BASE_URL}/${id}`, {
     method: "DELETE",
   });
+  getCards();
 };
 
 let onMore = async (id) => {
